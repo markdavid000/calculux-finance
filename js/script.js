@@ -1,48 +1,48 @@
-const btnNavEl = document.querySelector(".btn-mobile-nav");
-const headerEl = document.querySelector(".main-nav-content");
-btnNavEl.addEventListener("click", function () {
-  headerEl.classList.toggle("nav-open");
+const btnNavEl = document.querySelector('.btn-mobile-nav');
+const headerEl = document.querySelector('.main-nav-content');
+btnNavEl.addEventListener('click', function () {
+  headerEl.classList.toggle('nav-open');
 });
 
-const allLinks = document.querySelectorAll(".smooth-scroll:link");
+const allLinks = document.querySelectorAll('.smooth-scroll:link');
 console.log(allLinks);
 allLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
+  link.addEventListener('click', function (e) {
     e.preventDefault();
-    const href = link.getAttribute("href");
+    const href = link.getAttribute('href');
 
-    if (href === "#")
+    if (href === '#')
       window.scrollTo({
         top: 0,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
 
-    if (href !== "#" && href.startsWith("#")) {
+    if (href !== '#' && href.startsWith('#')) {
       const sectionEl = document.querySelector(href);
       console.log(sectionEl);
-      sectionEl.scrollIntoView({ behavior: "smooth" });
+      sectionEl.scrollIntoView({ behavior: 'smooth' });
     }
 
-    if (link.classList.contains("main-nav-link"))
-      headerEl.classList.toggle("nav-open");
+    if (link.classList.contains('main-nav-link'))
+      headerEl.classList.toggle('nav-open');
   });
 });
 
-var swiper = new Swiper(".slide-content", {
+var swiper = new Swiper('.slide-content', {
   slidesPerView: 2,
   spaceBetween: 25,
   loop: true,
-  centerSlide: "true",
-  fade: "true",
-  grabCursor: "true",
+  centerSlide: 'true',
+  fade: 'true',
+  grabCursor: 'true',
   pagination: {
-    el: ".swiper-pagination",
+    el: '.swiper-pagination',
     clickable: true,
     dynamicBullets: true,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
   breakpoints: {
     0: {
@@ -57,21 +57,21 @@ var swiper = new Swiper(".slide-content", {
   },
 });
 
-var swiper = new Swiper(".slide-conten", {
+var swiper = new Swiper('.slide-conten', {
   slidesPerView: 3,
   spaceBetween: 25,
   loop: true,
-  centerSlide: "true",
-  fade: "true",
-  grabCursor: "true",
+  centerSlide: 'true',
+  fade: 'true',
+  grabCursor: 'true',
   pagination: {
-    el: ".pagination",
+    el: '.pagination',
     clickable: true,
     dynamicBullets: true,
   },
   navigation: {
-    nextEl: ".button-next",
-    prevEl: ".button-prev",
+    nextEl: '.button-next',
+    prevEl: '.button-prev',
   },
   breakpoints: {
     0: {
@@ -85,7 +85,7 @@ var swiper = new Swiper(".slide-conten", {
     },
   },
 });
-const sectionHeroEl = document.querySelector(".section-hero");
+const sectionHeroEl = document.querySelector('.section-hero');
 
 const observer = new IntersectionObserver(
   function (entries) {
@@ -93,17 +93,17 @@ const observer = new IntersectionObserver(
     console.log(ent);
 
     if (ent.isIntersecting === false) {
-      document.body.classList.add("stiky");
+      document.body.classList.add('stiky');
     }
 
     if (ent.isIntersecting === true) {
-      document.body.classList.remove("stiky");
+      document.body.classList.remove('stiky');
     }
   },
   {
     root: null,
     threshold: 0,
-    rootMargin: "-80px",
+    rootMargin: '-80px',
   }
 );
 observer.observe(sectionHeroEl);
